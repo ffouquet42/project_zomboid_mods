@@ -1,4 +1,7 @@
---[[
+--[[ 
+Ultimate Smoker 41.78.16 stable
+SP : OK
+MP : TD
 Github: ffouquet42
 --]]
 
