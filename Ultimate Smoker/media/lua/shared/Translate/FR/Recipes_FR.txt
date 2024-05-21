@@ -1,0 +1,3 @@
+Recipes_FR = {
+   Recipe_Refill_Lighter = "Recharger un briquet",
+}
