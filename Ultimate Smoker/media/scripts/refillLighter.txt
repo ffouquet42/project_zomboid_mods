@@ -31,7 +31,7 @@ module Base
 		LightStrength	=	0.4,
 		DisplayName	=	Refillable Lighter,
 		ActivatedItem	=	TRUE,
-		Icon	=	Lighter,
+		Icon	=	RefillableLighter,
 		MetalValue = 1,
 		cantBeConsolided = TRUE,
 		StaticModel = Zippo,
@@ -46,7 +46,7 @@ module Base
 		DisplayCategory = Junk,
 		Weight	=	0.1,
 		DisplayName	=	Empty Lighter,
-		Icon	=	Lighter,
+		Icon	=	RefillableLighter,
 		StaticModel = Zippo,
 		WorldStaticModel = ZippoGround,
     }
