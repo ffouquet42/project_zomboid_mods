@@ -1,5 +1,0 @@
-Items_FR = {
-	DisplayName_Refillable_Lighter = "Briquet rechargeable",
-    DisplayName_Empty_Lighter = "Briquet vide",
-    DisplayName_Rolled_Cigarette = "Cigarette roulee",
-}
