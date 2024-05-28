@@ -1,0 +1,5 @@
+name=Smoker Start With Cigarettes
+poster=poster.png
+require=RefillableBlueLighter
+id==SmokerStartWithCigarettes
+description==Smoker Start With Cigarettes
