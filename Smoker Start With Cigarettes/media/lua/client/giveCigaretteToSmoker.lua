@@ -19,26 +19,23 @@ local function giveCigarettesToSmoker(playerIndex, player)
             player:getInventory():AddItem(cigarette)
         end
 		
-
 		-- Provide a way to light a cigarette with more or less use remaining
 		local lighterOrMatch = ZombRand(1, 101)
 		
-		if lighterOrMatch <= 50 then
+		if lighterOrMatch <= 50 then -- 50% Base Lighter
 			local lighterUsed = player:getInventory():AddItem("Base.Lighter")
 			lighterUsed:setUsedDelta(ZombRand(1, 11) / 10)
-		elseif lighterOrMatch <= 65 then
+		elseif lighterOrMatch <= 65 then -- 15% Base Matches
 			local MatchesUsed = player:getInventory():AddItem("Base.Matches")
 			MatchesUsed:setUsedDelta(ZombRand(1, 11) / 10)
-		elseif lighterOrMatch <= 85 then
+		elseif lighterOrMatch <= 85 then -- 20% Refillable Lighter
 			local RefillableLighterUsed = player:getInventory():AddItem("Base.RefillableLighter")
 			RefillableLighterUsed:setUsedDelta(ZombRand(1, 11) / 10)
-		elseif lighterOrMatch <= 95 then
+		elseif lighterOrMatch <= 95 then -- 10% Empty Lighter
 			local EmptyLighter = player:getInventory():AddItem("Base.EmptyLighter")
-		else -- useless?
+		else -- 5% Nothing
 		end
-		
     end
-
 end
 
 -- local function onKeyPressed(key)
