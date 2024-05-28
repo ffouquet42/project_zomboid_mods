@@ -1,0 +1,63 @@
+module Base
+{
+	item Cigarettes
+	{
+	    DisplayCategory = Junk,
+		Count	=	20,
+		HungerChange	=	0,
+		Weight	=	0.005,
+		RequireInHandOrInventory	=	Matches/Lighter/RefillableLighter,
+		Type	=	Food,
+		DisplayName	=	Cigarettes,
+		StressChange	=	-5,
+		Icon	=	IckySticks,
+		CustomContextMenu = Smoke,
+		CantBeFrozen = TRUE,
+		OnEat = OnEat_Cigarettes,
+		StaticModel = Cigarette,
+		EatType = Cigarettes,
+		WorldStaticModel = CigarettePack_Ground,
+		CustomEatSound = ,
+	}
+
+	item RefillableLighter
+	{
+	    DisplayCategory = LightSource,
+		LightDistance	=	2,
+		Weight	=	0.1,
+		Type	=	Drainable,
+		UseWhileEquipped	=	TRUE,
+		TorchCone	=	FALSE,
+		LightStrength	=	0.4,
+		DisplayName	=	Refillable Lighter,
+		ActivatedItem	=	TRUE,
+		Icon	=	RefillableLighter,
+		MetalValue = 1,
+		cantBeConsolided = TRUE,
+		StaticModel = Zippo,
+		WorldStaticModel = ZippoGround,
+		ticksPerEquipUse = 110,
+		Tags = StartFire;Lighter,
+		ReplaceOnDeplete	=	EmptyLighter,
+	}
+
+	item EmptyLighter
+    {
+		DisplayCategory = Junk,
+		Weight	=	0.1,
+		DisplayName	=	Empty Lighter,
+		Icon	=	RefillableLighter,
+		StaticModel = Zippo,
+		WorldStaticModel = ZippoGround,
+    }
+
+	recipe Refill Lighter
+    {
+       destroy EmptyLighter/RefillableLighter,
+       [Recipe.GetItemTypes.Petrol]=1,
+       Result:RefillableLighter,
+       Time:150.0,
+       Category:Survivalist,
+	   Override:true
+    }
+}
