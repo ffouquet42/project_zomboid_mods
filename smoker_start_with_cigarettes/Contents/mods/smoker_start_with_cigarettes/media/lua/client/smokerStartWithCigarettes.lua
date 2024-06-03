@@ -1,18 +1,13 @@
---[[
-Smoker start with cigarettes 41.78.16 stable
-This mod may be not compatible with other smokers mods
-SP : OK
-MP : TD
-Github: ffouquet42
---]]
-
 local function giveCigarettesToSmoker(playerIndex, player)
 
     -- Ensure character has Smoker trait
     if player:HasTrait("Smoker") then
 
-        -- Check if the items have already been given
-        if not player:getModData().cigarettesGiven then
+        -- Calculate time survived in minutes
+        local timeSurvived = player:getHoursSurvived() * 60
+
+		-- Check if time survived is under 5 minutes
+		if timeSurvived < 5 then
 
             -- Give between 0 and 20 cigarettes
             local cigarettesToGive = ZombRand(21)
@@ -28,19 +23,16 @@ local function giveCigarettesToSmoker(playerIndex, player)
             if lighterOrMatch <= 50 then -- 50% Base Lighter
                 local lighterUsed = player:getInventory():AddItem("Base.Lighter")
                 lighterUsed:setUsedDelta(ZombRand(1, 11) / 10)
-            elseif lighterOrMatch <= 65 then -- 15% Base Matches
+            elseif lighterOrMatch <= 70 then -- 20% Base Matches
                 local MatchesUsed = player:getInventory():AddItem("Base.Matches")
                 MatchesUsed:setUsedDelta(ZombRand(1, 11) / 10)
-            elseif lighterOrMatch <= 85 then -- 20% Refillable Lighter
+            elseif lighterOrMatch <= 85 then -- 15% Refillable Lighter
                 local RefillableLighterUsed = player:getInventory():AddItem("Base.RefillableLighter")
                 RefillableLighterUsed:setUsedDelta(ZombRand(1, 11) / 10)
             elseif lighterOrMatch <= 95 then -- 10% Empty Lighter
                 local EmptyLighter = player:getInventory():AddItem("Base.EmptyLighter")
             else -- 5% Nothing
             end
-
-            -- Mark that the items have been given
-            player:getModData().cigarettesGiven = true
         end
     end
 end
