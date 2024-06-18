@@ -1,6 +1,0 @@
-version=1
-id=3256262057
-title=Smoker Start With Cigarettes
-description=Smoker Start With Cigarettes
-tags=Build 41;Balance;Traits
-visibility=friendsOnly

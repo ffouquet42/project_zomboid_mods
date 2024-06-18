@@ -37,12 +37,4 @@ local function giveCigarettesToSmoker(playerIndex, player)
     end
 end
 
--- local function onKeyPressed(key)
--- 	local player = getPlayer()
---     if key == 16 then
--- 		giveCigarettesToSmoker(player:getID(), player)
---     end
--- end
-
 Events.OnCreatePlayer.Add(giveCigarettesToSmoker)
--- Events.OnKeyPressed.Add(onKeyPressed)
