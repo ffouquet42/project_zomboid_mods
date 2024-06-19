@@ -1,6 +1,6 @@
 version=1
 id=3256263411
 title=Refillable Blue Lighter
-description=Refillable Blue Lighter
+description=Add refillable blue Lighter item.
 tags=Build 41;Items
-visibility=friendsOnly
+visibility=public
